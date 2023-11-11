@@ -133,7 +133,7 @@ You will need the following installations to have the web up and running using p
    ```sh
    git clone https://github.com/jfrancoboeta/southflalerts.git
    ```
-3. Run the .sql file to install the database with MySQL in your host
+3. Run the <a href = "/alertsdb.sql">alertsdb.sql</a> file to install the database with MySQL in your host
 4. Update the Python script in <a href = "/alerts/Settings.py">alerts/Settings.py</a> with your info: SMTP and database credentials
 5. Update Django settings.py in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> with your info: Allowed Hosts and trusted origins with your website URL; SMTP and database with your credentials; Your Google ReCaptcha public and private key; Your Django secret key
 6. Run the Django app (make sure you are in the directory where manage.py is located):
