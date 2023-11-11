@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <head>
+      <title>South Florida Alerts - Unsubscribe</title>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/webpage.css' %}">
+   </head>
+   <header>
+      <div class="topnav">
+         <a class="left" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+         <a href="/changelog" class="left"><i class="fa fa-fw fa-pencil-square-o"></i> Changelog</a>
+         <a href="/contact" class="left"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+         <a href="/faq" class="left"><i class="fa fa-fw fa-info-circle"></i> FAQ</a>
+         <a class="right" href=""><img src="{% static 'favicon.ico' %}" href="/"></img></a>
+      </div>
+   </header>
+   <body>
+      <div class="formbody">
+         <form action="" class="decor" method = "POST">
+            {% csrf_token %}
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
+               <h1>
+                  <center>UNSUBSCRIBE</center>
+               </h1>
+               <center><h3>Please enter the email you used when you submitted an alerts notification form to unsubscribe from our services</h3></center>
+               <input type="email" placeholder="Enter your email" name = "email" required>
+               <center>{{ form.captcha }}</center>
+               <button class = "button" type="submit" href="">Submit</button>
+                {% if messages %}
+                        {% for message in messages %}
+                            <h3 class = "{% if message.tags == 'success' %} message-green {% elif message.tags == 'error' %} message-red {% endif %}" style = "text-align:center">{{message}}</h3>
+                        {% endfor %}
+                {% endif %}
+            </div>
+         </form>
+      </div>
+{% include "Footer.html" %}

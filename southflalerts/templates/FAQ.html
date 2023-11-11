@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <head>
+      <title>South Florida Alerts - FAQ</title>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/webpage.css' %}">
+   </head>
+
+   <body>
+    <header>
+      <div class="topnav">
+         <a class="left" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+         <a href="/changelog" class="left"><i class="fa fa-fw fa-pencil-square-o"></i> Changelog</a>
+         <a href="/contact" class="left"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+         <a href="/faq" class="active left"><i class="fa fa-fw fa-info-circle"></i> FAQ</a>
+         <a class="right" href="/"><img src="{% static 'favicon.ico' %}" href=""></img></a>
+      </div>
+   </header>
+      <div class="formbody">
+         <span class="span_area">
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
+               <h1>
+                  <center>FAQ</center>
+               </h1>
+               <center>
+                  <h3>Here you will find a list of Frequently Asked Questions (FAQs). This page will be updated periodically</h3>
+               </center>
+               <button class="accordion">How do I find the correct class seats URL?</button>
+               <div class="panel">
+                  <p>To find the correct class seats URL, you will need to click <a href = "https://usfonline.admin.usf.edu/pls/prod/bwckschd.p_disp_dyn_sched" target="_blank" rel="noopener noreferrer">here</a> and search your desired semester and class. Please note that this is an official USF website, unrelated to South Florida Alerts.</p>
+                  <p><b>IMPORTANT:</b> Do not use your OASIS account to search the schedule as this will not provide us with the required authorisation to access the page's contents</p>
+                  <p>After finding the class, click on the CRN (a 5 digit number) as shown in the example below:</p>
+                  <center><img src="{% static 'Step1.png' %}" width="100%" height="100%"></center>
+                  <p>Once inside the class, you should click the red squared area:</p>
+                  <center><img src="{% static 'Step2.png' %}" width="100%" height="100%"></center>
+                  <p>You should now be seeing this page that includes the seat information:</p>
+                  <center><img src="{% static 'Step3.png' %}" width="100%" height="100%"></center>
+                  <p>Get the URL of that page and put it in the South Florida Alerts form. If you did all the steps correctly, you should be getting a confirmation email within 10 minutes of submitting the form!</p>
+               </div>
+               <button class="accordion">How is my data stored or used?</button>
+               <div class="panel">
+                  <p>South Florida Alerts will only collect email addresses. These addresses are not associated to any personal data (like IP addresses, names, or any other sensible data that might serve as a form of personal identification), and are used for sole notification purposes.</p>
+                  <p>The data is securily stored in a database unaccessible by any third party. Please note that according to Florida State Law, email addresses are public records, so if you do not wish to have your email address shared with anybody else, please don't use our services.</p>
+               </div>
+               <button class="accordion">I keep getting the message "Captcha not cleared. Please try again." upon form submission</button>
+               <div class="panel">
+                  <p>Please make sure that the google "I am not a robot" captcha has a green check mark indicating you passed the cpatcha test, and remember that captchas expire if you take too long to submit the form.</p>
+                  <p>If everything looks good and you keep getting the same error try again later. If the issue persists please contact us in the contact tab.</p>
+               </div>
+               <button class="accordion">I keep getting a "We couldn't retrieve your class info!" email</button>
+               <div class="panel">
+                  <p>Please make sure that you have subscribed with the correct URL. Any URL that won't provide us with the available seats will be deleted from our database.</p>
+                  <p>Check the "How do I find the correct URL?" FAQ, if upon correctly completing all the steps you still get the same email, please contact us in the contact tab.</p>
+               </div>
+               <button class="accordion">I didn't get any email upon successful form submission</button>
+               <div class="panel">
+                  <p>Please wait at least 10 minutes since you submit the form, as we don't make instant requests to USF's website due to a legitimate use of the page's traffic.</p>
+                  <p>Alternatively you can check your spam folder or messages in quarentine. If you used a usf.edu email address, the message will likely have been detected as spam and put into quarentine.</p>
+                  <p>If this is the case and you cannot find it anywhere, try to use a gmail or any other email account. If the issue persists, please contact us in the contact tab.</p>
+               </div>
+               <button class="accordion">How do I stop receiving emails from South Florida Alerts?</button>
+               <div class="panel">
+                  <p>Go to the unsubscribe page by clicking <a href = "/unsubscribe" target="_blank" rel="noopener noreferrer">here</a>, and insert the email you used to subscribe.</p>
+                  <p>Please remember that if you enter an email that is not in our database, you will receive an error message. In this case please try with other email address(es) you might have used.</p>
+                  <p>If you are certain the email you are using to unsubscribe was the same email you subscribed with, and you still get the error message, that means you have already been removed from our database. This could be because of seats being found for your class, you used the wrong URL or any other related issue.</p>
+               </div>
+            </div>
+         </span>
+      </div>
+      <script>
+         var acc = document.getElementsByClassName("accordion");
+         var i;
+
+         for (i = 0; i < acc.length; i++) {
+           acc[i].addEventListener("click", function() {
+             this.classList.toggle("active");
+             var panel = this.nextElementSibling;
+             if (panel.style.maxHeight) {
+               panel.style.maxHeight = null;
+             } else {
+               panel.style.maxHeight = panel.scrollHeight + "px";
+             }
+           });
+         }
+      </script>
+   {% include "Footer.html" %}

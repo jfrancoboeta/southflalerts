@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <head>
+      <title>South Florida Alerts - Changelog</title>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/webpage.css' %}">
+   </head>
+
+   <body>
+    <header>
+      <div class="topnav">
+         <a class="left" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+         <a href="/changelog" class="active left"><i class="fa fa-fw fa-pencil-square-o"></i> Changelog</a>
+         <a href="/contact" class="left"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+         <a href="/faq" class="left"><i class="fa fa-fw fa-info-circle"></i> FAQ</a>
+         <a class="right" href="/"><img src="{% static 'favicon.ico' %}" href=""></img></a>
+      </div>
+   </header>
+      <div class="formbody">
+         <span class="span_area">
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
+               <h1>
+                  <center>CHANGELOG</center>
+               </h1>
+               <center>
+                  <h3>Here you will find the all the updates and changes to the alert system</h3>
+               </center>
+               <button class="accordion">Release Version</button>
+               <div class="panel">
+                  <p>Webpage's first version! Includes all the basic functionalities of the alert system.</p>
+               </div>
+            </div>
+         </span>
+      </div>
+      <script>
+         var acc = document.getElementsByClassName("accordion");
+         var i;
+
+         for (i = 0; i < acc.length; i++) {
+           acc[i].addEventListener("click", function() {
+             this.classList.toggle("active");
+             var panel = this.nextElementSibling;
+             if (panel.style.maxHeight) {
+               panel.style.maxHeight = null;
+             } else {
+               panel.style.maxHeight = panel.scrollHeight + "px";
+             }
+           });
+         }
+      </script>
+   {% include "Footer.html" %}
