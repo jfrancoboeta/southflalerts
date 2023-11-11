@@ -2,7 +2,7 @@
 host = ""
 user = ""
 dbpassword = ""
-database = ""
+database = "alertsdb"
 
 #smtp email sender credentials
 smtp_host = ""
