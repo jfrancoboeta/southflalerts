@@ -134,13 +134,17 @@ You will need the following installations to have the web up and running using p
    git clone https://github.com/jfrancoboeta/southflalerts.git
    ```
 3. Run the <a href = "/alertsdb.sql">alertsdb.sql</a> file to install the database with MySQL in your host
-4. Update the Python script in <a href = "/alerts/Settings.py">alerts/Settings.py</a> with your info: SMTP and database credentials
-5. Update Django settings.py in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> with your info: Allowed Hosts and trusted origins with your website URL; SMTP and database with your credentials; Your Google ReCaptcha public and private key; Your Django secret key
-6. Run the Django app (make sure you are in the directory where manage.py is located):
+4. Get a new Django secret key by running th following pip command, and add it in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> SECRET_KEY field
+    ```sh
+     python manage.py shell -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+     ```
+5. Update the Python script in <a href = "/alerts/Settings.py">alerts/Settings.py</a> with your info: SMTP and database credentials
+6. Update Django settings.py in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> with your info: Allowed Hosts and trusted origins with your website URL; SMTP and database with your credentials; Your Google ReCaptcha public and private key; Your Django secret key
+7. Run the Django app (make sure you are in the directory where manage.py is located):
    ```sh
    python manage.py runserver
    ```
-7. Use a scheduler (like the Windows one) or something related to periodically run the script in <a href = "/alerts/Searcher.py">alerts/Searcher.py</a> - Note that making many requests to a website might get your host blocked from accessing it, so please give some time between running the script
+8. Use a scheduler (like the Windows one) or something related to periodically run the script in <a href = "/alerts/Searcher.py">alerts/Searcher.py</a> - Note that making many requests to a website might get your host blocked from accessing it, so please give some time between running the script
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
