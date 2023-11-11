@@ -134,7 +134,7 @@ You will need the following installations to have the web up and running using p
    git clone https://github.com/jfrancoboeta/southflalerts.git
    ```
 3. Run the <a href = "/alertsdb.sql">alertsdb.sql</a> file to install the database with MySQL in your host
-4. Get a new Django secret key by running th following pip command, and add it in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> SECRET_KEY field
+4. Get a new Django secret key by running the following pip command, and add it in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> SECRET_KEY field
     ```sh
      python manage.py shell -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
      ```
