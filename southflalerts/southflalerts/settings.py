@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'southflalerts.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
+        'NAME': 'alertsdb',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
