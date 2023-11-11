@@ -140,11 +140,18 @@ You will need the following installations to have the web up and running using p
      ```
 5. Update the Python script in <a href = "/alerts/Settings.py">alerts/Settings.py</a> with your info: SMTP and database credentials
 6. Update Django settings.py in <a href = "/southflalerts/southflalerts/settings.py">southflalerts/southflalerts/settings.py</a> with your info: Allowed Hosts and trusted origins with your website URL; SMTP and database with your credentials; Your Google ReCaptcha public and private key; Your Django secret key
-7. Run the Django app (make sure you are in the directory where manage.py is located):
+7. Run Django migration to migrate the Django database and other related data to your MySQL database
    ```sh
-   python manage.py runserver
-   ```
-8. Use a scheduler (like the Windows one) or something related to periodically run the script in <a href = "/alerts/Searcher.py">alerts/Searcher.py</a> - Note that making many requests to a website might get your host blocked from accessing it, so please give some time between running the script
+     python manage.py shell -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+     ```
+9. Run the Django app (make sure you are in the directory where manage.py is located):
+     ```sh
+     python manage.py makemigrations
+     ```
+     ```sh
+     python manage.py migrate
+     ```
+10. Use a scheduler (like the Windows one) or something related to periodically run the script in <a href = "/alerts/Searcher.py">alerts/Searcher.py</a> - Note that making many requests to a website might get your host blocked from accessing it, so please give some time between running the script
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
