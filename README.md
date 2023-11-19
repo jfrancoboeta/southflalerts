@@ -169,6 +169,7 @@ Please refer to this [Documentation](https://southflalerts.com/faq)
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Use ReactJS as frontend
 - [ ] Subscribe only by selecting the term and class CRN (ID) instead of searching the URL
 - [ ] Make more regular checks without excessive amount of website requests
 - [ ] Implement waitlist seats to the web too
